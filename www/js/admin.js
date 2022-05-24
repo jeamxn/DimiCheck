@@ -1,6 +1,6 @@
 $(window).load(() => {
     const time = 1500; 
-    const audio = new Audio('/file/sound.mp3');
+    const audio = new Audio('//file.dimigo.xyz/sound/sound.mp3');
     let button = $('.button');
     let ifCheckedEnd = 0;
     let serial, select;

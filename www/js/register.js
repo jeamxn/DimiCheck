@@ -1,7 +1,7 @@
 $(window).load(() => {
     const time = 1500; 
     let type, ifCheckedEnd = 0;
-    const audio = new Audio('/file/sound.mp3');
+    const audio = new Audio('//file.dimigo.xyz/sound/sound.mp3');
     $('.btn1').css('background-color', '#90d6e5');
     $('.btn2').css('background-color', '#fff');
     type = 1;
