@@ -8,8 +8,8 @@
 
 디미체크는 디미고 모든 학반에서 지원됩니다!
 
-- 스마트폰 클라이언트: https://dimigo.xyz
-- TV 클라이언트: https://tv.dimigo.xyz
+- 스마트폰 클라이언트: [https://dimigo.xyz](https://dimigo.xyz)
+- TV 클라이언트: [https://tv.dimigo.xyz](https://tv.dimigo.xyz)
 
 
 
@@ -17,7 +17,7 @@
 
 ### 핸드폰 클라이언트
 
-제일 먼저 공용 휴대폰으로 스마트폰 클라이언트(https://dimigo.xyz)에 접속하세요!
+제일 먼저 공용 휴대폰으로 [스마트폰 클라이언트](https://dimigo.xyz)에 접속하세요!
 
 1. 나갈 때
    - 화장실/물: 별도 위치 선택 없이 학생증 바코드 인식
@@ -34,7 +34,7 @@
 
 ### TV클라이언트
 
-스마트TV에서 TV클라이언트(https://tv.dimigo.xyz)로 접속 해주세요!
+스마트TV에서 [TV 클라이언트](https://tv.dimigo.xyz)로 접속 해주세요!
 
 ![](https://file.dimigo.xyz/readme/tvFirst)
 
