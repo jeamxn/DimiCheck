@@ -1,0 +1,70 @@
+@import url('//cdn.isamin.kr/Font/Pretendard/web/static/pretendard.css');
+*{
+  font-family:'Pretendard', 'sans-serif';
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  font-size: 20px;
+  transition: all 300ms;
+  user-select: none;
+  overflow-x: none;
+}
+html, body{
+  width: 100vw;
+  height: 100vh;
+  
+}
+input[type=button], input[type=number], input[type=text], input[type=password] { 
+  -webkit-appearance: none; 
+  -webkit-border-radius: 0;
+  border-radius: 10px;
+}
+input, select, textarea{
+  outline: none;
+  border: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+input[type=button], input[type=submit], select, .pointer{
+  cursor: pointer;
+}
+input::placeholder{
+  color: rgb(218, 218, 218);
+}
+
+#textInput{
+    padding: 10px;
+    margin: 20px 0 0 0;
+    width: calc(100% - 40px);
+    max-width: 400px;
+    text-align: center;
+}
+.title{
+    font-size: 30px;
+    font-weight: 600;
+}
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    padding: 20px 10px;
+}
+.result{
+    width: 100%;
+}
+svg{
+    width: 300px;
+}

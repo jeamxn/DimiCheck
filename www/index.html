@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="kr" style="background: #dee0f9">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//cdn.chicken-moo.com/jquery/jquery-latest.js"></script>
+    <script src="//cdn.chicken-moo.com/cookie.js"></script>
+    <script src="//cdn.chicken-moo.com/sweetalert2/11.4.13/dist/sweetalert2.all.min.js"></script>
+    <script src="/js/barcode.js"></script>
+    <link rel="stylesheet" href="/css/admin.css">
+    <script src="/js/admin.js"></script>
+    <title>디미체크</title>
+</head>
+<body link="black" alink="black" vlink="black">
+    <div class="center">
+        <div class="line">
+            <video id="webcam" class="webcam" poster=""></video>
+        </div>
+        <div class="line">
+            <div class="button">
+                <img src="/img/humidity.svg" class="buttonImg">
+                <div class="buttonText">화장실/물</div>
+            </div>
+            <div class="button">
+                <img src="/img/sun.svg" class="buttonImg">
+                <div class="buttonText">세탁</div>
+            </div>
+        </div>
+
+        <div class="line">
+            <div class="button">
+                <img src="/img/users.svg" class="buttonImg">
+                <div class="buttonText">복도</div>
+            </div>
+            <div class="button">
+                <img src="/img/book-alt.svg" class="buttonImg">
+                <div class="buttonText">방과후</div>
+            </div>
+        </div>
+
+        <div class="line">
+            <div class="button">
+                <img src="/img/navigation.svg" class="buttonImg">
+                <div class="buttonText">창동</div>
+            </div>
+            <div class="button">
+                <img src="/img/play.svg" class="buttonImg">
+                <div class="buttonText">자동</div>
+            </div>
+        </div>
+
+        <div class="line">
+            <div class="button">
+                <img src="/img/world.svg" class="buttonImg">
+                <div class="buttonText">기구활동</div>
+            </div>
+            <div class="button">
+                <img src="/img/pencil.svg" class="buttonImg">
+                <div class="buttonText">아날로그</div>
+            </div>
+        </div>
+
+        <div class="line">
+            <div class="button">
+                <img src="/img/car.svg" class="buttonImg">
+                <div class="buttonText">외출</div>
+            </div>
+            <div class="button">
+                <img src="/img/home.svg" class="buttonImg">
+                <div class="buttonText">귀가</div>
+            </div>
+        </div>
+
+        <div class="line">
+            <div class="button">
+                <img src="/img/menu-burger.svg" class="buttonImg">
+                <div class="buttonText">기타(교내)</div>
+            </div>
+            <input type="number" class="button1" placeholder="바꿀 학번">
+        </div>
+
+        <div class="line">
+            <select id="sourceSelect"></select>
+        </div>
+        
+        <div class="line">
+            <div class="registerText register">카드 등록</div>
+        </div>
+    </div>
+</body>
+</html>

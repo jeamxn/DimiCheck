@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="kr" style="background: rgb(255, 213, 229)">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//cdn.chicken-moo.com/jquery/jquery-latest.js"></script>
+    <script src="//cdn.chicken-moo.com/cookie.js"></script>
+    <script src="//cdn.chicken-moo.com/sweetalert2/11.4.13/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="/css/sweetalert2.css">
+    <script src="/js/style.js?src=style"></script>
+    <script src="/js/register.js"></script>
+    <script src="/js/barcode.js"></script>
+    <title>디미체크 카드등록</title>
+</head>
+<body link="black" alink="black" vlink="black">
+    <div class="login">
+        <img src="/file/favicon.svg" style="width: 100px" class="logo pointer">
+        <div class="input_div serial_div">
+            <div class="input_p serial_p">카드 바코드 번호</div>
+            <input type="password" placeholder="학생증을 스캔 해주세요!" class="input_input serial" readonly>
+        </div>
+        <div class="input_div card">
+            <div class="input_p scaner">스캐너</div>
+            <video class="webcam" id="webcam"></video>
+            <div class="t1">
+                <select id="sourceSelect" class="sourceSelect"></select>
+                <div class="leftright">↔️</div>
+            </div>
+        </div>
+        <div class="input_div number_div">
+            <div class="input_p number_p">학번</div>
+            <input type="number" placeholder="0000" class="input_input number">
+        </div>
+        <div class="input_div name_div">
+            <div class="input_p name_p">이름</div>
+            <input type="text" placeholder="최재민" class="input_input name">
+        </div>        
+        <div class="input_div userType_div">
+            <div class="input_p userType_p">가입 종류</div>
+            <select class="userType">
+                <option value="1">학생</option>
+                <option value="2">교직원</option>
+            </select>
+        </div>
+        <input type="button" value="카드 등록" class="btn">
+    </div>
+</body>
+</html>

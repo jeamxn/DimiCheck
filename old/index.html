@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="kr" style="background: rgb(255, 213, 229)">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//cdn.chicken-moo.com/jquery/jquery-latest.js"></script>
+    <script src="//cdn.chicken-moo.com/cookie.js"></script>
+    <script src="//cdn.chicken-moo.com/sweetalert2/11.4.13/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="/css/sweetalert2.css">
+    <script src="/js/style.js?src=style"></script>
+    <script src="/js/jasup.js"></script>
+    <script src="/js/barcode.js"></script>
+    <title>디미체크</title>
+</head>
+<body link="black" alink="black" vlink="black">
+    <div class="login">
+        <img src="/file/favicon.svg" style="width: 100px" class="logo pointer">
+        <div class="input_div jasu_select_div">
+            <div class="input_p jasu_select_div">자습 위치</div>
+            <select class="userType jasu_select">
+                <option value="화장실/물">화장실/물 (기본값)</option>
+                <option>복도</option>
+                <option>세탁</option>
+                <option>방과후</option>
+                <option>창동</option>
+                <option>자동</option>
+                <option>외출</option>
+                <option>귀가</option>
+                <option>기타 (학교 활동인 경우)</option>
+                <option>기타 (학교에 없는 경우)</option>
+            </select>
+        </div>
+        <div class="input_div serial_div">
+            <div class="input_p serial_p">카드 바코드 번호</div>
+            <input type="password" placeholder="학생증을 스캔 해주세요!" class="input_input serial" readonly>
+        </div>
+        <div class="input_div card">
+            <div class="input_p scaner">스캐너</div>
+            <video class="webcam" id="webcam"></video>
+            <div class="t1">
+                <select id="sourceSelect" class="sourceSelect"></select>
+                <div class="leftright">↔️</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="a">
+        <div class="ib register pointer">가입하기</div>
+        <div class="ib sero">|</div>
+        <div class="ib now pointer">자습현황</div>
+    </div>
+</body>
+</html>

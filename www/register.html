@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="kr" style="background: #dee0f9">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//cdn.chicken-moo.com/jquery/jquery-latest.js"></script>
+    <script src="//cdn.chicken-moo.com/cookie.js"></script>
+    <script src="//cdn.chicken-moo.com/sweetalert2/11.4.13/dist/sweetalert2.all.min.js"></script>
+    <script src="/js/barcode.js"></script>
+    <link rel="stylesheet" href="/css/admin.css">
+    <script src="/js/register.js"></script>
+    <title>디미체크</title>
+</head>
+<body link="black" alink="black" vlink="black">
+    <div class="center">
+        <div class="line">
+            <div class="lineTitle">학번</div>
+        </div>
+        <div class="line">
+            <input type="number" class="button2 number" placeholder="0000">
+        </div>
+        <div class="line">
+            <div class="lineTitle">이름</div>
+        </div>
+        <div class="line">
+            <input type="text" class="button2 name" placeholder="최재민">
+        </div>
+        <div class="line">
+            <div class="lineTitle">가입 종류</div>
+        </div>
+        <div class="line">
+            <div class="button btn1">
+                <img src="/img/user.svg" class="buttonImg">
+                <div class="buttonText">학생</div>
+            </div>
+            <div class="button btn2">
+                <img src="/img/user.svg" class="buttonImg">
+                <div class="buttonText">교직원</div>
+            </div>
+        </div>
+        <div class="line">
+            <div class="lineTitle">스캐너</div>
+        </div>
+        <div class="line">
+            <video id="webcam" class="webcam1"></video>
+        </div>
+        <div class="line">
+            <select id="sourceSelect"></select>
+        </div>
+        
+        <div class="line">
+            <div class="registerText register">돌아가기</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,245 @@
+@import url('//cdn.isamin.kr/Font/Pretendard/web/static/pretendard.css');
+*{
+  font-family:'Pretendard', 'sans-serif';
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  font-size: 20px;
+  transition: all 300ms;
+}
+html, body{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+input[type=button], input[type=number], input[type=text] { 
+  -webkit-appearance: none; 
+  -webkit-border-radius: 0;
+  border-radius: 10px;
+}
+input, select, textarea{
+  outline: none;
+  border: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+input[type=button], input[type=submit], select, .pointer{
+  cursor: pointer;
+}
+input::placeholder{
+  color: rgb(218, 218, 218);
+}
+
+
+
+html, body{
+  background: rgb(255, 234, 242);
+}
+body{
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+input[type=text], input[type=number]{
+  border: 0;
+  padding: 10px;
+}
+.logo{
+  width: 100px;
+  margin: 20px 0;
+}
+.input_div, .jasu_select_div{
+  margin: 0 0 15px 0;
+}
+.input_p{
+  margin: 0 0 5px 0;
+}
+.input_input {
+  width: 300px;
+}
+.userType{
+  width: 320px;
+  border-radius: 10px;
+  padding: 10px;
+  background: #fff;
+}
+.userType-2{
+  width: 160px;
+  border-radius: 10px;
+  padding: 10px;
+  background: #fff;
+}
+.userType_div{
+  margin: 0 0 30px 0;
+}
+
+.btn{
+  background: rgb(232, 60, 119);
+  color: #fff;
+  width: 320px;
+  padding: 10px 0;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+}
+.btn:hover{
+  background: rgb(134, 35, 70);
+}
+.jasu_select{
+  margin: 0 0 5px 0;
+}
+.ib{
+  display: inline-block;
+}
+.sero{
+  margin: 0 5px;
+}
+.box{
+  margin: 0 0 20px 0;
+}
+.login-2, .login{
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px 0;
+  border-width: 0 1px;
+  border-style: solid;
+  border-color: rgb(232, 60, 119);
+}
+.info{
+  font-weight: 600;
+  font-size: 25px;
+}
+.center{
+  text-align: center;
+}
+.info_div{
+  margin: 0 0 5px 0;
+}
+.who{
+  width: 100%;
+}
+.n{
+  height: 100%;
+  width: 30vw;
+  display: inline-block;
+}
+.title{
+  font-size: 40px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+.lc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:row;
+}
+.dp{
+  display: inline-block;
+}
+.grade{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  border: 5px solid rgb(232, 60, 119);
+  width: 150px;
+  height: 150px;
+  font-size: 100px;
+}
+.pre_p{
+  font-size: 25px;
+  color: #fff;
+  background: rgb(232, 60, 119);
+  margin: 10px 0 0 0;
+  padding: 10px 20px;
+  border-radius: 15px;
+  width: 150px;
+  display: inline-block;
+}
+.pre{
+  text-align: center;
+}
+
+:root{
+  --dimigo: rgba(232, 60, 119, 1);
+  --dimigo-y: rgba(232, 60, 119, 0.1);
+}
+.nows{
+  width: 100%;
+  text-align: center;
+}
+.nowT{
+  background: linear-gradient(to right, var(--dimigo) 30%, var(--dimigo-y) 30%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  --aps: rgb(176, 176, 176);
+}
+.nTime{
+  font-size: 45px;
+  font-weight: 700;
+}
+.leave{
+  color: var(--dimigo);
+  font-size: 20px;
+  margin: 10px 0px;
+}
+.next1{
+  width: 50%;
+  height: calc(100% - 100px);
+  display: flex;
+  justify-content: right;
+  align-items: end;
+}
+.next2{
+  width: 50%;
+  height: calc(100% - 100px);
+  display: flex;
+  justify-content: left;
+  align-items: end;
+}
+.nextBox{
+  text-align: right;
+}
+.nextBox2{
+  text-align: left;
+}
+.nextT{
+  font-size: 20px;
+}
+.nextTitle{
+  font-size: 30px;
+}
+.nt{
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  width: 100%;
+}
+.mr{
+  height: calc(100% - 345px);
+  display: flex;
+  justify-content: center;
+  align-items:flex-end;
+  width: 100%;
+}
+.m_2{
+  width: 100%;
+  padding: 0 0 20px 0;
+}
+.nextBox, .nextBox2{
+  margin: 0 25px;
+}

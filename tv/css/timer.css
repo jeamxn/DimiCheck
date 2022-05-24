@@ -1,0 +1,149 @@
+@import url('//cdn.isamin.kr/Font/SpoqaHanSansNeo/font.css');
+
+* {
+  margin:0; 
+  padding:0;
+  font-family:'Spoqa Han Sans Neo', 'sans-serif';
+}
+
+html, body {
+  width: 100%; 
+  height: 100%;
+  background:#dee0f9;
+  color:#000;
+}
+
+#nav {
+  position:fixed;
+  z-index:10;
+  top:2vw;
+  left:50%;
+  transform:translateX(-50%);
+  color:white;
+  opacity:0.5;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+#nav .title {
+  font-size:2vw;
+  font-weight:lighter;
+}
+
+#nav .by {
+  font-size:1vw;
+  font-weight:lighter;
+  opacity:0.5;
+}
+
+#app {
+  position:fixed;
+  z-index:10;
+  top:50%; left:50%;
+  width: 100vw;
+  transform:translate(-50%, -50%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+#title {
+  font-size:5vw;
+  font-weight:bolder;
+  color:#ff81c2;
+}
+
+#left {
+  font-size:3vw;
+  font-weight:light;
+}
+
+
+#clock {
+  position:fixed;
+  z-index:8;
+  top:50%; left:50%;
+  transform:translate(-50%, -50%);
+  height:90vh;
+  width:90vh;
+  opacity:0.5;
+}
+
+#clock #min, #clock #hor {
+  background:white;
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform-origin:center bottom;
+}
+
+#clock #min {
+  width:0.5vh;
+  height:40vh;
+  transform:translate(-50%, calc(-50% - 20vh)) rotate(0deg);
+}
+
+#clock #hor {
+  width:0.7vh;
+  height:20vh;
+  transform:translate(-50%, calc(-50% - 10vh)) rotate(0deg);
+}
+
+
+
+#footer {
+  z-index:10;
+  position:fixed;
+  left:50%; bottom:0;
+  transform:translate(-50%, 0);
+  display:flex;
+  justify-content:space-between;
+  width:calc(100% - 4vw);
+  padding:2vw;
+  font-size:3vw;
+}
+
+#footer #pre, #footer #next {
+  display:flex;
+  flex-direction:column;
+}
+
+#footer #pre {
+  align-items:flex-start;
+}
+
+#footer #next {
+  align-items:flex-end;
+}
+
+#footer .title {
+  font-size:3vw;
+  font-weight:bolder;
+}
+
+#footer .des {
+  font-size:2vw;
+  font-weight:lighter;
+}
+
+#footer .time {
+  font-size:2vw;
+  font-weight:lighter;
+}
+
+#view {
+  position:fixed;
+  z-index:5;
+  top:0; left:0;
+  width:100vw !important; height:100vh !important;
+  border:none !important;
+}
+
+#hider {
+  position:fixed;
+  z-index:6;
+  top:0; left:0;
+  width:100vw !important; height:100vh !important;
+  background:rgba(48, 48, 48,0.8);
+}
