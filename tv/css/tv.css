@@ -9,8 +9,13 @@
 html, body {
   width: 100%; 
   height: 100%;
-  background:#dee0f9;
   color:#000;
+}
+html{
+  background: #fff;
+}
+body{
+  background: rgba(222, 224, 249, 0.7);
 }
 
 input[type=button], input[type=number], input[type=text], input[type=password] { 
@@ -159,3 +164,14 @@ input::placeholder{
     font-weight: 600;
 }
 
+.background{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    width: 100vw; height: 100vh;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: -1;
+    overflow: hidden;
+}

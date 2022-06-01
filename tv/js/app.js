@@ -1,17 +1,60 @@
 $(window).load(() => {
   let data = new Object(); let reload = null;
+  let isRest = false;
+  let todayWhat = '';
+  let preBackground = '';
+  
+
+  const getBackground = () => {
+    $.ajax({
+      url: '/js/background.json',
+      type: 'post',
+      success: res => {
+        if(preBackground != res.url){
+          preBackground = res.url;
+          $('.background').attr('src', `${res.url}?autoplay=1&mute=1&loop=1&controls=1`);
+        }
+      }
+    });
+  };
+  getBackground(); setInterval(() => {
+    getBackground();
+  }, 10000);
 
   const refData = (callback) => {
     $.ajax({
       url:'/js/data.json',
       type:'GET',
       dataType:'json',
-      success:function(result) {
+      success: result => {
         if(result.view != data.view) $('#view').attr('src', result.view);
         if(!reload) reload = result.reload;
         if(reload != result.reload) location.href = '/';
         data = result;
-        callback();
+        let today = new Date();   
+
+        let year = today.getFullYear();
+        let month = String(today.getMonth() + 1).padStart(2, '0');
+        let date = String(today.getDate()).padStart(2, '0');
+
+        $.ajax({
+          url: '//api.dimigo.xyz/today',
+          type: 'GET',
+          data: {
+            date: `${year}${month}${date}`
+          },
+          success: res => {
+            let data = res.SchoolSchedule[1].row;
+            for(let i = 0; i < data.length; i++){
+              if(data[i].SBTR_DD_SC_NM == "휴업일" || data[i].SBTR_DD_SC_NM == "공휴일") {
+                isRest = true;
+                todayWhat = `${data[i].EVENT_NM}: `;
+              }
+            }
+            callback();
+          }
+        });
+       
       }
     })
   };
@@ -54,7 +97,7 @@ $(window).load(() => {
       const nowSecond = (time.getHours() * 60 + time.getMinutes()) * 60 + time.getSeconds() - 40;
       let count = 0;
       let curData;
-      if(time.getDay() >= 1 && time.getDay() <= 5) {
+      if(time.getDay() >= 1 && time.getDay() <= 5 && !isRest) {
         curData = data["평일"];
       }
       else {
@@ -73,9 +116,10 @@ $(window).load(() => {
           if(isGowsi){
             nowG = `${timetable[nowTime]} `;
           }
-          $('.nowTitle').html(`${value.title} ${nowG}(${(endSecond - startSecond) / 60}분, ${getTime(endSecond - nowSecond, 'left')})`);
+          $('.nowTitle').html(`${todayWhat}${value.title} ${nowG}(${(endSecond - startSecond) / 60}분, ${getTime(endSecond - nowSecond, 'left')})`);
           const persent = (nowSecond - startSecond) / (endSecond - startSecond) * 100;
-          $('.nowTitle').css('background', `linear-gradient(to right, #9dc7f0 ${persent}%, #f0f0f0 ${persent}%)`);
+          $('.nowTitle').css('background', `rgba(0, 0, 0, 1)`);
+          //$('.nowTitle').css('background', `linear-gradient(to right, #9dc7f0 ${persent}%, #f0f0f0 ${persent}%)`);
           $('.nowTitle').css('-webkit-background-clip', `text`);
           $('.nowTitle').css('-webkit-text-fill-color', `transparent`);
           break;
