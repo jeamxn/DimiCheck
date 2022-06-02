@@ -61,7 +61,7 @@ body{
   height: 120px;
   border-radius: 15px; 
   object-fit: cover;
-  transform: rotateY(180deg);
+  transform: rotateY(0deg);
   cursor: pointer;
   color: #fff;
 }

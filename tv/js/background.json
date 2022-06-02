@@ -1,5 +1,8 @@
 {
-    "urls": "https://tv.dimigo.xyz/blank",
-    "url": "https://www.youtube.com/embed/py_phbQxy5Y",
+    "url": "https://tv.dimigo.xyz/blank",
+    "urls": "https://www.youtube.com/embed/IqWg89DQyJI",
+    "backgroundOpacity": 0,
+    "htmlOpacity": 1,
+    "textColor": "rgb(0, 0, 0)",
     "reload": 1
 }

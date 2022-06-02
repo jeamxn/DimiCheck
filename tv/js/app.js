@@ -3,23 +3,6 @@ $(window).load(() => {
   let isRest = false;
   let todayWhat = '';
   let preBackground = '';
-  
-
-  const getBackground = () => {
-    $.ajax({
-      url: '/js/background.json',
-      type: 'post',
-      success: res => {
-        if(preBackground != res.url){
-          preBackground = res.url;
-          $('.background').attr('src', `${res.url}?autoplay=1&mute=1&loop=1&controls=1`);
-        }
-      }
-    });
-  };
-  getBackground(); setInterval(() => {
-    getBackground();
-  }, 10000);
 
   const refData = (callback) => {
     $.ajax({
@@ -44,13 +27,16 @@ $(window).load(() => {
             date: `${year}${month}${date}`
           },
           success: res => {
-            let data = res.SchoolSchedule[1].row;
-            for(let i = 0; i < data.length; i++){
-              if(data[i].SBTR_DD_SC_NM == "휴업일" || data[i].SBTR_DD_SC_NM == "공휴일") {
-                isRest = true;
-                todayWhat = `${data[i].EVENT_NM}: `;
+            try{
+              let data = res.SchoolSchedule[1].row;
+              for(let i = 0; i < data.length; i++){
+                if(data[i].SBTR_DD_SC_NM == "휴업일" || data[i].SBTR_DD_SC_NM == "공휴일") {
+                  isRest = true;
+                  todayWhat = `${data[i].EVENT_NM}: `;
+                }
               }
             }
+            catch{}
             callback();
           }
         });
@@ -118,14 +104,15 @@ $(window).load(() => {
           }
           $('.nowTitle').html(`${todayWhat}${value.title} ${nowG}(${(endSecond - startSecond) / 60}분, ${getTime(endSecond - nowSecond, 'left')})`);
           const persent = (nowSecond - startSecond) / (endSecond - startSecond) * 100;
-          $('.nowTitle').css('background', `rgba(0, 0, 0, 1)`);
-          //$('.nowTitle').css('background', `linear-gradient(to right, #9dc7f0 ${persent}%, #f0f0f0 ${persent}%)`);
+          $('.nowTitle').css('background', `linear-gradient(to right, #9492ff ${persent}%, #9dc7f0 ${persent}%)`);
           $('.nowTitle').css('-webkit-background-clip', `text`);
           $('.nowTitle').css('-webkit-text-fill-color', `transparent`);
           break;
         }
         count++;
       }
+      const now = `${String(time.getHours()).padStart(2, '0')}시 ${String(time.getMinutes()).padStart(2, '0')}분 ${String(time.getSeconds()).padStart(2, '0')}초`;
+      $('.nowTime').html(now);
     }; refrech();
     setInterval(() => {
       refrech();
