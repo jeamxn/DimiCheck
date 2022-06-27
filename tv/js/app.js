@@ -1,6 +1,5 @@
 var timetable = ['', '', '', '', '', '', ''];
 $(window).load(() => {
-  const startSound = new Audio('/sound/cham.wav');
   let data = new Object(); let reload = null;
   let isRest = false;
   let todayWhat = '';
@@ -224,9 +223,6 @@ $(window).load(() => {
         const end = start0end[1].split(':');
         const startSecond = (start[0] * 60 + start[1] * 1) * 60;
         const endSecond = (end[0] * 60 + end[1] * 1) * 60;
-        if(nowSecond == startSecond || nowSecond == endSecond){
-          startSound.play();
-        }
         if(nowSecond >= startSecond && nowSecond < endSecond) {
           let nowTime = value.title.substr(0, 1) - 1;
           let isGowsi = value.title.substr(1, 2) == '교시' ? true : false;
