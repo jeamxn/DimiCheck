@@ -1,3 +1,22 @@
+const getWaterDeg = () => {
+  let ret;
+  $.ajax({
+    url: '/water',
+    type: 'POST',
+    async: false,
+    success: res => {
+      ret = res;
+    }
+  });
+  return ret;
+}
+console.log(getWaterDeg());
+
+const setWater = () => {
+  const water = getWaterDeg();
+  $('.water').html(`지금 한강 수온은? ${water.temp}℃`);
+}
+
 var timetable = ['', '', '', '', '', '', ''];
 $(window).load(() => {
   let data = new Object(); let reload = null;
@@ -26,6 +45,7 @@ $(window).load(() => {
               data: list
           },
           success: res => {
+            setWater();
               try{
                 playsound.pause();
                 playsound.currentTime = 0;

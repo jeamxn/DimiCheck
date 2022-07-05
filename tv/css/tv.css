@@ -178,3 +178,9 @@ input::placeholder{
     z-index: -1;
     overflow: hidden;
 }
+.water{
+  font-size: 24px;
+  margin: 0 0 10px 0;
+  color: #333;
+  font-weight: 100;
+}
