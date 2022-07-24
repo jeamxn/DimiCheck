@@ -13,8 +13,8 @@ const getWaterDeg = () => {
 console.log(getWaterDeg());
 
 const setWater = () => {
-  const water = getWaterDeg();
-  $('.water').html(`지금 한강 수온은? ${water.temp}℃`);
+  //const water = getWaterDeg();
+  //$('.water').html(`지금 한강 수온은? ${water.temp}℃`);
 }
 
 var timetable = ['', '', '', '', '', '', ''];
@@ -80,81 +80,6 @@ $(window).load(() => {
           }
       });
   };
-  
-  const moniter = () => {
-      let test = '';
-      for(let i = 0; i < list.length; i++){
-          test += `${Math.floor(list[i] / 10)}-${list[i] % 10}${i == list.length - 1 ? '' : ', '}`;
-      }
-      Swal.fire({
-          title: '학반 입력',
-          html: `모니터링 할 학반을 입력해 주세요.<br>ex) 1학년 6반 => 16<br>현재 입력 된 학반: ${test}`,
-          icon: 'question',
-          input: 'number',
-          inputAttributes: {
-              autocapitalize: 'off'
-          },
-          showCancelButton: true,
-          confirmButtonText: '추가하기!',
-          cancelButtonText: '끝내기!'
-      }).then(res => {
-          console.log(res);
-
-          
-      
-          if(res.isConfirmed && res.value != ''){
-              list.push(res.value);
-              moniter();
-          }
-          else{
-            const start = () => {
-              refData(() => {
-                main();
-              });
-            }; start();
-
-
-              for(let i = 0; i < list.length; i++){
-                  let grd = Math.floor(list[i] / 10);
-                  let cls = list[i] % 10;
-                  let f = i != list.length - 1 ? ',' : '';
-                  $('.gc').html(`${$('.gc').html()} ${grd}-${cls}${f}`);
-                  //console.log(grd, cls);
-              }
-            
-              change();
-              setInterval(() => {
-                  change();
-              }, 10000);
-            
-              if(list.length == 1){
-                  let today = new Date();
-                  let year = today.getFullYear();
-                  let month = ('0' + (today.getMonth() + 1)).slice(-2);
-                  let day = ('0' + today.getDate()).slice(-2);
-              
-                  let dateString = `${year}${month}${day}`;
-                  $.ajax({
-                      url: '//api.dimigo.xyz/timetable',
-                      type: 'get',
-                      data: {
-                          date: dateString,
-                          grade: Math.floor(list[0] / 10),
-                          class: list[0] % 10
-                      },
-                      success: res => {
-                          res = res['hisTimetable'][1]['row'];
-                          for(let i = 0; i < res.length; i++){
-                              timetable[i] = res[i]['ITRT_CNTNT'];
-                          }
-                          console.log(timetable);
-                      }
-                  })
-              }
-          }
-      });
-  }
-  moniter();
 
   const refData = (callback) => {
     $.ajax({
@@ -266,4 +191,88 @@ $(window).load(() => {
       refrech();
     }, 500);
   }
+
+    
+  const abs = () => {
+    refData(() => {
+      main();
+    });
+    for(let i = 0; i < list.length; i++){
+      let grd = Math.floor(list[i] / 10);
+      let cls = list[i] % 10;
+      let f = i != list.length - 1 ? ',' : '';
+      $('.gc').html(`${$('.gc').html()} ${grd}-${cls}${f}`);
+      //console.log(grd, cls);
+  }
+
+  change();
+  setInterval(() => {
+      change();
+  }, 10000);
+
+  if(list.length == 1){
+      let today = new Date();
+      let year = today.getFullYear();
+      let month = ('0' + (today.getMonth() + 1)).slice(-2);
+      let day = ('0' + today.getDate()).slice(-2);
+  
+      let dateString = `${year}${month}${day}`;
+      $.ajax({
+          url: '//api.dimigo.xyz/timetable',
+          type: 'get',
+          data: {
+              date: dateString,
+              grade: Math.floor(list[0] / 10),
+              class: list[0] % 10
+          },
+          success: res => {
+              res = res['hisTimetable'][1]['row'];
+              for(let i = 0; i < res.length; i++){
+                  timetable[i] = res[i]['ITRT_CNTNT'];
+              }
+              console.log(timetable);
+          }
+      })
+  }
+  }
+
+  const moniter = () => {
+      let test = '';
+      for(let i = 0; i < list.length; i++){
+        test += `${Math.floor(list[i] / 10)}-${list[i] % 10}${i == list.length - 1 ? '' : ', '}`;
+    }
+
+    
+      let as = location.href.split('?w=')[1];
+      console.log(as);
+      if(as != undefined){
+        list.push(as);
+        abs();
+        return;
+      }
+
+      
+      Swal.fire({
+          title: '학반 입력',
+          html: `모니터링 할 학반을 입력해 주세요.<br>ex) 1학년 6반 => 16<br>현재 입력 된 학반: ${test}`,
+          icon: 'question',
+          input: 'number',
+          inputAttributes: {
+              autocapitalize: 'off'
+          },
+          showCancelButton: true,
+          confirmButtonText: '추가하기!',
+          cancelButtonText: '끝내기!'
+      }).then(res => {
+          console.log(res);
+          if(res.isConfirmed && res.value != ''){
+              list.push(res.value);
+              moniter();
+          }
+          else{
+            abs();
+          }
+      });
+  }
+  moniter();
 });
